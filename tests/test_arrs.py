@@ -1,5 +1,6 @@
 import unittest
 from utils import arrs
+from utils import dicts
 
 
 class TestArrs(unittest.TestCase):
@@ -14,3 +15,9 @@ class TestArrs(unittest.TestCase):
         self.assertEqual(arrs.my_slice([1, 2, 3]), [1, 2, 3])
         self.assertEqual(arrs.my_slice([], 2), [])
         self.assertEqual(arrs.my_slice([1, 2, 3, 4], -3, -1), [2, 3])
+
+    def test_get_val(self):
+        self.assertEqual(dicts.get_val({"I": "Anton", "F": "Glazunov", "O": "Anatolevich"}, "F", "test"), "Glazunov")
+        self.assertEqual(dicts.get_val({"I": "Anton", "F": "Glazunov", "O": "Anatolevich"}, "a"), "git")
+        self.assertEqual(dicts.get_val({}, "a"), "git")
+        self.assertEqual(dicts.get_val({}), "git")
