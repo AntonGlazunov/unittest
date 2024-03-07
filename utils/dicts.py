@@ -1,5 +1,6 @@
 """Функции для работы со словорями"""
 
+
 def get_val(collection, key=None, default='git'):
     """
     Функция возвращает значение из словаря по переданному ключу,
@@ -10,8 +11,7 @@ def get_val(collection, key=None, default='git'):
     :param default: значение по-умолчанию.
     :return: значение по индексу или значение по-умолчанию.
     """
-    if key != None:
-        for key_coll in collection.keys():
-            if key_coll == key:
-                return collection[key]
+    for key_coll in collection.keys():
+        if key_coll == key:
+            return collection[key]
     return default
